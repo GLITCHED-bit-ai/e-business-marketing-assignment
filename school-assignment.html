@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-business &amp; Marketing</title>
+  <meta name="description" content="A student-friendly guide to e-business, digital marketing, and building customer relationships online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3f6f2;
+      --ink: #17231f;
+      --muted: #52605a;
+      --forest: #173c32;
+      --forest-deep: #102c25;
+      --coral: #f17b5b;
+      --lime: #d7e779;
+      --line: #d7dfd8;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 36px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-decoration: none;
+    }
+
+    .wordmark-mark {
+      display: grid;
+      width: 30px;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--coral);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 19px;
+    }
+
+    .topbar nav { display: flex; gap: 28px; }
+
+    .topbar nav a {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .topbar nav a:hover, .topbar nav a:focus-visible { color: var(--forest); }
+
+    .hero {
+      overflow: hidden;
+      background: var(--forest-deep);
+      color: #f7f6ee;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 100px);
+      max-width: 1240px;
+      min-height: 530px;
+      margin: 0 auto;
+      padding: 76px 36px 82px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--lime);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 22px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 6.5vw, 80px);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 0.98;
+    }
+
+    h1 span { color: var(--coral); }
+
+    .hero-copy {
+      max-width: 445px;
+      margin-bottom: 30px;
+      color: #d5e0d9;
+      font-size: 17px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 46px;
+      padding: 0 18px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .hero-link:hover { background: #e5f39c; transform: translateY(-2px); }
+    .hero-link:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+
+    .hero-figure { margin: 0; }
+
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.35;
+      object-fit: cover;
+      background: #0b1b18;
+      border: 1px solid rgb(255 255 255 / 16%);
+    }
+
+    .hero-figure figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 10px;
+      color: #c0d0c7;
+      font-size: 11px;
+    }
+
+    .hero-figure figcaption a { color: var(--lime); }
+
+    main { max-width: 1120px; margin: 0 auto; padding: 0 36px; }
+
+    .section { padding: 92px 0; border-bottom: 1px solid var(--line); }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .section-number {
+      padding-top: 10px;
+      color: #79877f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h2 {
+      max-width: 680px;
+      margin-bottom: 12px;
+      font-family: var(--serif);
+      font-size: clamp(35px, 4vw, 52px);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+
+    .section-intro { max-width: 650px; margin-bottom: 0; color: var(--muted); }
+
+    .intro-copy {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .intro-copy p { max-width: 760px; margin: 0; font-size: 18px; line-height: 1.8; }
+
+    .business-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: components;
+    }
+
+    .business-list li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      align-content: start;
+      gap: 4px 12px;
+      min-height: 132px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      counter-increment: components;
+    }
+
+    .business-list li::before {
+      content: "0" counter(components);
+      grid-row: 1 / span 2;
+      color: #718077;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .business-list strong {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .business-list span {
+      grid-column: 2;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .facts-layout, .resources-layout {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .fact-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fact-list li {
+      padding: 18px 18px 18px 0;
+      border-top: 2px solid var(--coral);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .resources-layout { align-items: start; }
+
+    .resource-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .resource-links li { border-bottom: 1px solid var(--line); }
+
+    .resource-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      color: var(--forest);
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .resource-links a::after { content: "↗"; color: #bf543a; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 36px 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .topbar { padding: 16px 22px; }
+      .topbar nav { gap: 16px; }
+      .topbar nav a { font-size: 12px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 38px; min-height: 0; padding: 68px 22px 56px; }
+      .hero-figure { max-width: 560px; }
+      main { padding: 0 22px; }
+      .section { padding: 68px 0; }
+      .section-heading, .intro-copy, .facts-layout, .resources-layout { grid-template-columns: 1fr; gap: 12px; }
+      .section-heading { margin-bottom: 28px; }
+      .section-number { padding-top: 0; }
+      .business-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fact-list { grid-template-columns: 1fr; gap: 12px; }
+      .fact-list li { padding: 14px 0; }
+      footer { padding: 22px; }
+    }
+
+    @media (max-width: 430px) {
+      .topbar { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .topbar nav { width: 100%; justify-content: space-between; }
+      .hero-inner { padding-top: 52px; }
+      h1 { font-size: 54px; }
+      .resource-links { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">M</span> MARKET / DIGITAL BUSINESS FIELD GUIDE</a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#business">E-business</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+    <div class="hero" id="top">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">A field guide to business in the digital age</p>
+          <h1>E-business<br><span>&amp; Marketing</span></h1>
+          <p class="hero-copy">Build a business online. Reach the right audience. Turn thoughtful marketing into lasting customer relationships.</p>
+          <a class="hero-link" href="#business">Explore the essentials <span aria-hidden="true">↓</span></a>
+        </div>
+        <figure class="hero-figure">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+            alt="Laptop displaying analytics charts used to understand digital business performance"
+          >
+          <figcaption><span>Digital analytics at work</span><span>01 / Growth strategy</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="section-heading">
+        <span class="section-number">01 / OVERVIEW</span>
+        <div>
+          <h2>What is e-business?</h2>
+          <p class="section-intro">More than an online shop: a connected way to run and grow a business.</p>
+        </div>
+      </div>
+      <div class="intro-copy">
+        <span aria-hidden="true"></span>
+        <p>E-business uses digital tools and the internet to manage business activities. It includes online sales, payments, customer service, supply chains, and the data that helps teams make better decisions. E-commerce is one part of e-business: the buying and selling of products or services online.</p>
+      </div>
+    </section>
+
+    <section class="section" id="business">
+      <div class="section-heading">
+        <span class="section-number">02 / THE BUILDING BLOCKS</span>
+        <div>
+          <h2>Inside a digital business</h2>
+          <p class="section-intro">A good online experience connects every step, from discovery to support.</p>
+        </div>
+      </div>
+      <ol class="business-list">
+        <li><strong>Online storefront</strong><span>A website or app helps people discover, compare, and order products.</span></li>
+        <li><strong>Payments &amp; delivery</strong><span>Secure checkout connects a purchase to reliable fulfillment.</span></li>
+        <li><strong>Customer experience</strong><span>Helpful service supports customers before and after a sale.</span></li>
+        <li><strong>Data &amp; operations</strong><span>Analytics helps a business understand demand and improve its work.</span></li>
+      </ol>
+    </section>
+
+    <section class="section" id="marketing">
+      <div class="section-heading">
+        <span class="section-number">03 / DIGITAL MARKETING</span>
+        <div>
+          <h2>Marketing with purpose</h2>
+          <p class="section-intro">Good digital marketing pairs a clear message with the right audience and measurable goals.</p>
+        </div>
+      </div>
+      <ul class="fact-list">
+        <li>Start with the audience. Learn their needs and questions before choosing channels.</li>
+        <li>Create useful content. Clear, helpful information earns attention and trust.</li>
+        <li>Measure what matters. Track visits, signups, sales, and returning customers to improve campaigns.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="section-heading">
+        <span class="section-number">04 / KEEP EXPLORING</span>
+        <div>
+          <h2>Learn more</h2>
+          <p class="section-intro">Explore these reliable websites to learn more about digital business and marketing.</p>
+        </div>
+      </div>
+      <ul class="resource-links">
+        <li><a href="https://www.sba.gov/business-guide/manage-your-business/marketing-sales">U.S. Small Business Administration: Marketing &amp; Sales</a></li>
+        <li><a href="https://skillshop.withgoogle.com/">Google Skillshop: Digital Marketing Training</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>MARKET / DIGITAL BUSINESS FIELD GUIDE</p>
+    <p>Developed by ASHRAF HUSSAIN BARBHUIYA</p>
+    <p>&copy; 2026 ASHRAF HUSSAIN BARBHUIYA. All rights reserved.</p>
+  </footer>
+</body>
+</html>
